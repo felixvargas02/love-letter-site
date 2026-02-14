@@ -1,0 +1,372 @@
+/* Modern CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+}
+
+/* Improve body defaults */
+body {
+    padding: 20px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    background-color: var(--off-white);
+}
+
+/* Make media easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    font-family: var(--font-nana);
+}
+
+.h1-title {
+    border: 2px #F4F1EC;
+}
+
+/* Font */
+@font-face {
+    font-family: "BlankRiver";
+    src: url('fonts/Blank\ River.ttf') format('truetype');
+}
+
+/* CSS Variables*/
+:root {
+    --pink-soft: #E6A5B5;
+    --pink-main: #C77C8E;
+    --pink-deep: #8B4A5A;
+
+    --teal-accent: #3E6E8E;
+
+    --off-white: #F4F1EC;
+
+    --ink-black: #1A1A1A;
+    --ink-gray: #5C5C5C;
+
+    --beige-accent: #CBB59B;
+    --lavender-accent: #6D5A8C;
+
+    --text-sm: 1rem;
+    --text-md: 2rem;
+    --text-lg: 3rem;
+    --text-xl: 4rem;
+    --text-HUGE: 6rem;
+
+
+    --font-nana: 'BlankRiver', sans-serif
+}
+
+/* NEW STYLING */
+h1 {
+    color: var(--pink-main);
+    font-size: var(--text-xl);
+    text-align: center;
+    /* text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff; */
+    font-family: var(--font-nana);
+
+}
+
+h2 {
+    color: var(--pink-main);
+    font-size: var(--text-lg);
+    text-align: center;
+}
+
+p {
+    color: var(--pink-main);
+    font-size: var(--text-md);
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    font-size: var(--text-md);
+    color: var(--pink-deep);
+    font-family: var(--font-nana);
+}
+
+section {
+    padding: 6rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+button,
+textarea {
+    font-family: var(--font-nana);
+    font-size: 2rem;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.reasons {
+    background: var(--pink-soft);
+    border-radius: 40px;
+}
+
+.present {
+    background: var(--off-white);
+    border-radius: 40px;
+}
+
+.final {
+    text-align: center;
+}
+
+.reasons ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+details {
+    background: var(--off-white);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border: 2px solid var(--pink-main);
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+summary {
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--pink-deep);
+}
+
+.start-btn {
+    align-self: center;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: none;
+    background: var(--pink-main);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    background: var(--pink-deep);
+    transform: scale(1.05);
+}
+
+.reasons h2,
+.present h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.reasons h2::after,
+.present h2::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    bottom: -5px;
+    width: 110%;
+    height: 40%;
+    background: var(--teal-accent);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("assets/images/strawberry.png");
+    background-size: 80px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--pink-soft);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#enter-btn {
+    padding: 1.5rem 3rem;
+    font-size: 2rem;
+    border-radius: 50px;
+    border: none;
+    background: var(--pink-main);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#enter-btn:hover {
+    transform: scale(1.05);
+}
+
+.floating-hearts::before,
+.floating-hearts::after {
+    content: "❤";
+    position: fixed;
+    font-size: 3rem;
+    color: var(--pink-main);
+    animation: floatUp 6s linear infinite;
+    opacity: 0.3;
+}
+
+.floating-hearts::after {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -50px;
+        transform: translateX(0);
+    }
+
+    100% {
+        bottom: 100vh;
+        transform: translateX(-50px);
+    }
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    background-image: url("assets/images/strawberry.png");
+    background-size: 60px;
+    background-repeat: repeat;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+body::before {
+    left: 0;
+}
+
+body::after {
+    right: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-cat {
+    display: block;
+    margin: 2rem auto;
+    width: 150px;
+}
+
+.nana-cup {
+    width: 180px;
+    display: block;
+    margin: 1.5rem auto;
+    align-items: center;
+}
+
+.necklace-img {
+    width: 160px;
+    margin: 2rem auto;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+.vivienne-section {
+    background-image: url("assets/images/nana/nanadeco.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 100px;
+    opacity: 0.95;
+}
+
+details[open] {
+    background: #fff;
+    transform: scale(1.01);
+}
+
+.final-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.final-text {
+    text-align: center;
+    flex: 1;
+}
+
+.final-left,
+.final-right {
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.final-left {
+    transform: rotate(-8deg);
+}
+
+.final-right {
+    transform: rotate(8deg);
+}
